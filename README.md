@@ -1,6 +1,6 @@
 # Google Software Product Sprint
 
-This repo contains the projects you'll work on throughout SPS.
+This repo contains the projects Mauricio's portfolio and sps projects from local cmp 
 
 To get started:
 
