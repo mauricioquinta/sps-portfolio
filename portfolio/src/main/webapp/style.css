@@ -1,9 +1,64 @@
+body {
+    background-image: url("/images/bGround.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: auto;
+
+    
+}
+
+
 #content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+    #margin-left: auto;
+    margin-right: auto;
+    width: 650px;
 }
 
 #greeting-container {
-  margin-top: 20px;
+    margin-top: 20px;
+}
+
+#self{
+    width:300px;
+    height:420px;
+}
+
+#extendedInfo{
+    margin-right: auto;
+}
+
+#quoteBox{
+    
+}
+
+#picColm{
+    margin-left: auto;
+}
+
+/*groups the images into  a collum*/
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+    flex: 50%;
+    padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+
+
+.cPic{
+    width:400px;
+    height:300px;
+    border-radius: 8px;
+
 }
