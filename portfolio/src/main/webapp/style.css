@@ -7,6 +7,13 @@ body {
     
 }
 
+div {
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+
 
 #content {
     #margin-left: auto;
@@ -25,18 +32,36 @@ body {
 
 #extendedInfo{
     margin-right: auto;
+    
 }
 
 #quoteBox{
     
 }
 
+#header{
+    border-style: dotted dashed solid double;
+}
 #picColm{
     margin-left: auto;
 }
 
 /*groups the images into  a collum*/
 
+.iBox{
+
+    border-width: 65px;
+    border-style: solid;
+    border-image: url("/images/poke.png");
+    border-image-slice:65;
+    border-image-width:20px;
+    border-image-outset:0px;
+    border-image-repeat:stretch;
+    background-color:#ADDFAD;
+    
+    
+   
+}
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -52,11 +77,13 @@ body {
 .column img {
   margin-top: 8px;
   vertical-align: middle;
+  border-radius: 8px;
+
 }
 
 
 
-.cPic{
+.cPic , .sPic{
     width:400px;
     height:300px;
     border-radius: 8px;
