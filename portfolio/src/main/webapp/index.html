@@ -7,14 +7,22 @@
     <script src="script.js"></script>
   </head>
   <body>
+
+    <div class="header">
+      <a href="#default" class="logo">Mau's Portfolio</a>
+	<div class="header-right">
+	  <a class="active" href="#home">Home</a>
+	  <a href="#contact">Contact</a>
+	  <a href="#about">About</a>
+	</div>
+    </div>
+
+    
     <div id="content">
 
       
-      <h1 id = "header">My Portfolio</h1>
-
-      
       <div id="aboutMe">
-	<h3>About Me: a short history</h3>
+	<h3 class ="iHead">About Me: a short history</h3>
 	<p class= "iBox">
 	  My name is Mauricio. I was born in San Miguel, El Salvador 1998. I moved to the states, thanks to my dad, at age 7. I grew up in northern Virginia less than an hour from DC.
 	  I was a curious little kid, first I figured out how to speak english, then progressed with the childhood thing. In middle school the tech-ed teacher said 'hey wanna build robots
@@ -26,21 +34,22 @@
       
 
       <div id="infoBox">
-	<img src="/images/img1.jpeg" id="self" class= "sPic">
-	<ul>
-	  <li>Mauricio Quintanilla</li>
-	  <li>Columbia University: School of Engineering</li>
-	  <li>Major: Computer Science</li>
-	  <li>Email: Mauricio.q@Columbia.edu</li>
+	<img src="images/img1.jpeg" id="self" class= "sPic">
+	<ul class= "list">
+	  <li class= "li">Mauricio Quintanilla</li>
+	  <li class= "li">Education: Columbia University School of Engineering</li>
+	  <li class= "li">Major: Computer Science</li>
+	  <li class= "li">Email: Mauricio.q@Columbia.edu</li>
 	</ul>
       </div>
       
       <div id="quoteBox">
-	<p>Click here to get a real cool quote!:</p>
+	<p>Click here to get a real cool quote!</p>
 	<button onclick="addRandomGreeting()">Quote Me!</button>
 	<div id="quote-container"></div>
       </div>
 
+      
       <div id="extendedInfo">
 
 	<div id="iBox1">
@@ -50,11 +59,11 @@
 	    I believe in giving back; the same way people helped me, I like to help whenever, however I can. 
 	    I'm a really logical person, its just how I think. I take everything in stride, things don't always go how we expect them to go.
 	    I enjoy life it's the greatest thing in the world.
-	    I'm determined to enjoy it as best I can. 
-
+	    I'm determined to enjoy it as best I can.
 	  </p>
 	</div>
 
+	
 	<div id="iBox2" >
 	  <h3 class= "iHead">Things I Do</h3>
 	  <p  class= "iBox" >
@@ -64,21 +73,20 @@
 	    Now the cool stuff I do; I like to go hiking, spent alot of time in shenendoah. I like to go kyaking and surfing which I've recently picked up.
 	    I love traveling, I've been to Holland, France, Ghana, El Salvador, Morroco, and New Zealand hoping to add more once covid clears.
 	    Thats the jist of it I also play soccer
-
 	  </p>
 	</div>
 
 
 	<div id="iBox3" >
-	  <h3 class= "ihead" >Stuff I Like</h3>
+	  <h3 class= "iHead" >Stuff I Like</h3>
 	  <p  class= "iBox" >
 	    I love film and television, huge fan of Wes Anderson, Taika Waititi, Stanley Kubrick. I also watch some anime here and there. I like going to pretty places and taking pictures.
 	    I jaws was my thing and I do like star wars. Love classic rock such as Queen, the Beatles, Zepplin, Hendrix, kinks, Stones, etc. I play too much sudoku. I like to read books
 	    I'm particularly fond of classic american and english ltterature. I'm into philosophy enough that I'm trying to minor in it, and failing. I enjoy fishing and swimming,
 	    and those days where its sunny outside but also raining... its called a monkeys wedding
-
 	  </p>
 	</div>
+	
       </div><!-- extended info -->
 
     </div> <!-- content -->
@@ -87,9 +95,9 @@
     <div id = "content2"> 
       <div id="picColm" class="row">
 	<div class="column">
-	  <img class = "cPic" src="/images/img2.jpeg">
-	  <img class = "cPic" src="/images/img5.jpeg">
-	  <img class = "cPic" src="/images/img4.jpeg">
+	  <img class = "cPic" src="images/img2.jpeg">
+	  <img class = "cPic" src="images/img3.jpeg">
+	  <img class = "cPic" src="images/img4.jpeg">
 	</div>
       </div>
       
