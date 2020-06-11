@@ -4,17 +4,22 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: auto;
+    margin:0px;
+    padding:0px;
 
     
 }
 
-div:not(.header) {
+div:not(.header, ) {
     padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
 }
 
+h3{
+    margin: 1px;
+}
 
 /* these are elements by ID*/
 
@@ -29,6 +34,10 @@ div:not(.header) {
 #self{
     width:300px;
     height:420px;
+    margin-top: 5px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    margin-left: 20px;
 }
 
 #extendedInfo{
@@ -36,12 +45,11 @@ div:not(.header) {
 }
 
 #quoteBox{
+  
     
 }
 
-#header{
-    border-style: dotted dashed solid double;
-}
+
 
 #picColm{
     //margin-left: auto;
@@ -53,11 +61,21 @@ div:not(.header) {
 /*these are classes */
 .iHead{
     border-style: double;
-    background-color:#f2f3f4;
+    //background-color:#f2f3f4;
+    background-color:#A2D9CE;
     display: inline-block;
-    padding: 7px;
+    padding-top: 5x;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    margin-top: 15px;
+    margin-bottom:2px;
+    margin-left: 20px;
+    margin-right:20px;
+  
+    
 }
-.iBox{
+.iBox , .list , #quoteBox{
 
     border-width: 20px;
     border-style: solid;
@@ -66,11 +84,16 @@ div:not(.header) {
     border-image-width:20px;
     border-image-outset:15px;
     border-image-repeat:stretch;
-    background-color:#ADDFAD;
-    width: 650px;
-    
-   
+    background-color:#CCD1D1;
+    display: inline-block;
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:20px;
+    margin-bottom:20px;
+		   
+		     
 }
+
 
 .row {
     display: flex;
@@ -107,8 +130,11 @@ div:not(.header) {
 /* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
-  background-color: #566F56;
+  background-color: #73C6B6;
   padding: 5px 5px;
+  width: 100%;
+  margin: 0px;
+  
  
   
 }
@@ -123,39 +149,47 @@ div:not(.header) {
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
+
+  
 }
 
 /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
 .header a.logo {
-  font-size: 25px;
-  font-weight: bold;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Bungee Hairline';font-size: 22px;
+    border-style: dotted dashed solid double;
 }
 
 /* Change the background color on mouse-over */
 .header a:hover {
-  background-color: #fffaf0;
-  color: black;
+    background-color: #fffaf0;
+    color: black;
 }
 
 /* Style the active/current link*/
 .header a.active {
-  background-color: #f0fff0;
-  color: white;
+    background-color: #0E6655;
+    color: white;
 }
 
 /* Float the link section to the right */
 .header-right {
-  float: right;
+    float: right;
+    padding: 5px;
+    
+    
+    
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
 @media screen and (max-width: 500px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .header-right {
-    float: none;
-  }
+    .header a {
+	float: none;
+	display: block;
+	text-align: left;
+    }
+    .header-right {
+	float: none;
+    }
 }
