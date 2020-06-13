@@ -3,14 +3,14 @@ body {
     background-image: url("images/bGround.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: auto;
+    background-size: 100% 100%;
     margin:0px;
     padding:0px;
 
     
 }
 
-div:not(.header, ) {
+div:not(.header) {
     padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -23,12 +23,36 @@ h3{
 
 /* these are elements by ID*/
 
-#greeting-container {
+#aboutMe{
+    float: left;
+}
+
+#infoContainer{
+    overflow: hidden;
+    display:flex;
+}
+#infoBox{
+    float: left;
+    width: 350px;
+}
+
+#quoteBox{
+    float:left;
+}
+
+
+#extendedInfo{
+    float:left;
+	      
+}
+
+#quote-container{
     margin-top: 20px;
     padding-top: 5px;
     padding-right: 5px;
     padding-bottom: 5px;
     padding-left: 5px;
+    
 }
 
 #self{
@@ -40,28 +64,25 @@ h3{
     margin-left: 20px;
 }
 
-#extendedInfo{
-    
-}
 
-#quoteBox{
-  
-    
+#infoContainer2{
+    overflow: hidden;
+    display:flex;
 }
 
 
 
-#picColm{
-    //margin-left: auto;
-    margin: 10px;
-    float: left; 
+
+
+#picRow{
+   
+    
 }
 
 /*groups the images into  a collum*/
 /*these are classes */
 .iHead{
     border-style: double;
-    //background-color:#f2f3f4;
     background-color:#A2D9CE;
     display: inline-block;
     padding-top: 5x;
@@ -95,21 +116,21 @@ h3{
 }
 
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
 }
 
 /* ----------------Create two equal columns that sits next to each other */
 .column {
-    flex: 50%;
-    padding: 0 4px;
+    float: left;
+    width: auto;
+    padding: 5px;
 }
 
 .column img {
   margin-top: 8px;
-  vertical-align: middle;
   border-radius: 8px;
 
 }
@@ -177,9 +198,6 @@ h3{
 .header-right {
     float: right;
     padding: 5px;
-    
-    
-    
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
