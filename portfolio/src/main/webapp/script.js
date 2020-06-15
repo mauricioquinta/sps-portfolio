@@ -31,3 +31,11 @@ function randomQuote() {
   const quoteCont = document.getElementById('quote-container');
   quoteCont.innerText = greeting;
 }
+
+
+
+function getNameUsingArrowFunction() {
+  fetch('/data').then(response => response.text()).then((name) => {
+    document.getElementById('mainHeader').innerText = name;
+  });
+}
