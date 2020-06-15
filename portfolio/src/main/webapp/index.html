@@ -7,12 +7,133 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+
+    <div class="header">
+      <a href="#default" class="logo">Mau's Portfolio</a>
+	<div class="header-right">
+	  <a class="active" href="#home">Home</a>
+	  <a href="#contact">Contact</a>
+	  <a href="#about">About</a>
+	</div>
     </div>
+
+    
+    <div id="content">
+
+
+      <div id="aboutMe">
+	  <h3 class ="iHead">About Me: a short history</h3>
+	  <p class= "iBox">
+	    My name is Mauricio. I was born in San Miguel, El Salvador 1998. I moved to the states, thanks to my dad, at age 7.
+	    I grew up in northern Virginia less than an hour from DC.
+	    I was a curious little kid, first I figured out how to speak english, then progressed with the childhood thing.
+	    In middle school the tech-ed teacher said 'hey wanna build robots after school and stuff?' and that sounded dope so I started doing that.
+	    In highschool I liked history and physics the most but math more than english.
+	    I got really  into robotics and engineering in general, it seemed right up my alley.
+	    I love problem solving, puzzles, and building things. I was particularly keen on programming!
+	    So I got myself into an engineering school and decided to pursue a computer science degree, so here I am living the dream...
+	    as my family's designated tech guy! Whooo! 
+	  </p>
+      </div>
+
+      
+      <div id="infoContainer"> <!-- this is where the first container starts  -->
+
+
+	<div id="infoBox">
+	  <img src="images/img1.jpeg" id="self" class= "sPic">
+	  <ul class= "list">
+	    <li class= "li">Mauricio Quintanilla</li>
+	    <li class= "li">Education: Columbia University: Fu School of Engineering</li>
+	    <li class= "li">Major: Computer Science</li>
+	    <li class= "li">Email: Mauricio.q@Columbia.edu</li>
+	  </ul>
+
+	  <div id="quoteBox">
+	    <p>Click here to get a real cool quote!</p>
+	    <button onclick=randomQuote()>Quote Me!</button>
+	    <div id="quote-container"></div>
+	  </div>
+	  
+	</div>
+      
+	
+
+	<div id="extendedInfo">
+
+	  <div id="iBox1">
+	    <h3 class= "iHead">What I'm About</h3>
+	    <p  class= "iBox" >
+	      I'm a peaceful, calm, quiet kind of person. I just want everyone to get along.
+	      My family and friends are a huge part of my life, I would not be where I am if it weren't for them.
+	      I believe in giving back; the same way people helped me, I like to help whenever, however I can. 
+	      I'm a really logical person, its just how I think. I take everything in stride, things don't always go how we expect them to go.
+	      I enjoy life it's the greatest thing in the world.
+	      I'm determined to enjoy it as best I can.
+	    </p>
+	  </div>
+
+	  
+	  <div id="iBox2" >
+	    <h3 class= "iHead">Things I Do</h3>
+	    <p  class= "iBox" >
+	      I drink and I know things! I also used to be a Game of Thrones fan.
+	      I'm a student mainly I spend the bulk of my time in classrooms and libraries. I'm a teacher as well.
+	      I've worked kids from elementry to highschool, teaching computer science.
+	      Last summer I got the chance to teach at a CS camp in Accra Ghana which was really exciting.
+	      I program; my interest lie in AI and machine learning but need far more experience.
+	      Now the cool stuff I do; I like to go hiking, spent alot of time in shenendoah.
+	      I like to go kyaking and surfing which I've recently picked up.
+	      I love traveling, I've been to Holland, France, Ghana, El Salvador, Morroco, and New Zealand hoping to add more once covid clears.
+	      Thats the jist of it I also love to play soccer
+	    </p>
+	  </div>
+
+
+	  <div id="iBox3" >
+	    <h3 class= "iHead" >Stuff I Like</h3>
+	    <p  class= "iBox" >
+	      I love film and television, huge fan of Wes Anderson, Taika Waititi, Stanley Kubrick.
+	      I also watch some anime here and there. I like going to pretty places and taking pictures.
+	      Jaws was my thing and I do like star wars.
+	      Love classic rock such as Queen, the Beatles, Zepplin, Hendrix, kinks, Stones, etc.
+	      I play too much sudoku. I like to read books, I'm particularly fond of classic american and english ltterature.
+	      I'm into philosophy enough that I'm trying to minor in it, and failing. I enjoy fishing and swimming,
+	      and those days where its sunny outside but also raining... its called a monkeys wedding.
+	    </p>
+	  </div>
+
+	
+	</div><!-- extended info -->
+     
+    
+	</div> <!-- end of first container  -->
+
+
+      
+
+      <div id="infoContainer2">
+
+	<div id = "picRow">
+	  <div class="row">
+	    
+	    <div class="column">
+	      <img class = "cPic" src="images/img2.jpeg">
+	    </div>
+	    
+	    <div class="column">
+	      <img class = "cPic" src="images/img3.jpeg">
+	    </div>
+	    
+	    <div class="column">
+	      <img class = "cPic" src="images/img4.jpeg">
+	    </div>
+	    
+	  </div>
+	</div>
+      
+       </div><!-- this is the end of second container -->
+
+    </div> <!-- content -->
   </body>
 </html>

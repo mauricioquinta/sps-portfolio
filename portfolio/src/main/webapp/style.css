@@ -1,9 +1,213 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+/* these are elements by type */
+body {
+    background-image: url("images/bGround.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    margin:0px;
+    padding:0px;
+
+    
 }
 
-#greeting-container {
-  margin-top: 20px;
+div:not(.header) {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+h3{
+    margin: 1px;
+}
+
+/* these are elements by ID*/
+
+#aboutMe{
+    float: left;
+}
+
+#infoContainer{
+    overflow: hidden;
+    display:flex;
+}
+#infoBox{
+    float: left;
+    width: 350px;
+}
+
+#quoteBox{
+    float:left;
+}
+
+
+#extendedInfo{
+    float:left;
+	      
+}
+
+#quote-container{
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    
+}
+
+#self{
+    width:300px;
+    height:420px;
+    margin-top: 5px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+
+#infoContainer2{
+    overflow: hidden;
+    display:flex;
+}
+
+
+
+
+
+#picRow{
+   
+    
+}
+
+/*groups the images into  a collum*/
+/*these are classes */
+.iHead{
+    border-style: double;
+    background-color:#A2D9CE;
+    display: inline-block;
+    padding-top: 5x;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    margin-top: 15px;
+    margin-bottom:2px;
+    margin-left: 20px;
+    margin-right:20px;
+  
+    
+}
+.iBox , .list , #quoteBox{
+
+    border-width: 20px;
+    border-style: solid;
+    border-image: url("images/poke.png");
+    border-image-slice:65;
+    border-image-width:20px;
+    border-image-outset:15px;
+    border-image-repeat:stretch;
+    background-color:#CCD1D1;
+    display: inline-block;
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:20px;
+    margin-bottom:20px;
+		   
+		     
+}
+
+
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* ----------------Create two equal columns that sits next to each other */
+.column {
+    float: left;
+    width: auto;
+    padding: 5px;
+}
+
+.column img {
+  margin-top: 8px;
+  border-radius: 8px;
+
+}
+
+
+
+.cPic , .sPic{
+    width:400px;
+    height:300px;
+    border-radius: 8px;
+
+}
+
+
+
+/*-----------------------------------------------------Header Styling--------------------------*/
+
+/* Style the header with a grey background and some padding */
+.header {
+  overflow: hidden;
+  background-color: #73C6B6;
+  padding: 5px 5px;
+  width: 100%;
+  margin: 0px;
+  
+ 
+  
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+
+  
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Bungee Hairline';font-size: 22px;
+    border-style: dotted dashed solid double;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+    background-color: #fffaf0;
+    color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+    background-color: #0E6655;
+    color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+    float: right;
+    padding: 5px;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+    .header a {
+	float: none;
+	display: block;
+	text-align: left;
+    }
+    .header-right {
+	float: none;
+    }
 }
