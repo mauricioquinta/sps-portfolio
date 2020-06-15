@@ -15,14 +15,19 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+function randomQuote() {
+    const greetings =[ 'Be yourself; everyone else is already taken   - Oscar Wilde',
+		       
+		       'Very little is needed to make a happy life; it is all within yourself, in your way of thinking.  - Marcus Aurelius',
+		       
+		       'I know this defies the law of gravity, but I never studied law!  - Bugs Bunny',
+		       "I don't know where I'm going from here, but I promise it won't be boring.  - David Bowie"
+		     ];
 
   // Pick a random greeting.
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
 
   // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const quoteCont = document.getElementById('quote-container');
+  quoteCont.innerText = greeting;
 }
