@@ -96,7 +96,7 @@ h3{
   
     
 }
-.iBox , .list , #quoteBox{
+.iBox , .list , #quoteBox, #comments{
 
     border-width: 20px;
     border-style: solid;
