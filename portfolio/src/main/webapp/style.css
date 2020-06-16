@@ -66,17 +66,17 @@ h3{
 
 
 #infoContainer2{
-    overflow: hidden;
-    display:flex;
+    text-align:center;
+}
+#picRow{
+    float: left; 
+    
 }
 
-
-
-
-
-#picRow{
-   
-    
+#comments{
+    clear:left;
+    text-align:center;
+    width:60%;
 }
 
 /*groups the images into  a collum*/
