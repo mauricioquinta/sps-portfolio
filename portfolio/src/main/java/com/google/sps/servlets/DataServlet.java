@@ -14,6 +14,7 @@
 
 package com.google.sps.servlets;
 
+import java.util.*;
 import com.google.sps.data.Comment;
 import com.google.gson.Gson;
 import java.io.IOException;
@@ -33,35 +34,35 @@ import javax.servlet.http.HttpServletResponse;
 public class DataServlet extends HttpServlet {
 
 
+    List<Comment> cList = new ArrayList<Comment>();
     
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
-	//String name = "Mau's Portfolio!"; 
-	//response.setContentType("text/html;");
-	//response.getWriter().println(name);
 
-	// Convert the server stats to JSON
-	Comment c1 = new Comment("i like this thing ");
-	Comment c2 = new Comment("i dont like this thing ");
-	Comment c3 = new Comment("i am indifferent about  this thing ");
-
-	//String c1s = "i like this thing "; //convertToJson(c1);
-	//String c2s = "i dont like this thing "; // convertToJson(c2);
-	//String c3s = "i am indifferent about this thing "; //convertToJson(c3);
-	
-	Comment[] cList = {c1,c2,c3};
 	String json = convertToJson(cList);
-	    
-
-	// Send the JSON as the response
 	response.setContentType("application/json;");
 	response.getWriter().println(json);
-
-
 	
     }
 
 
+
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
+	
+	// Get the input from the form.
+	String fName = request.getParameter("fName");
+	String lName = request.getParameter("lName");
+	String comment = request.getParameter("comment");
+
+	//create comment from content and add it to list 
+	Comment nc = new Comment(comment, fName, lName); 
+	cList.add(nc);
+	    
+	// Redirect back to the HTML page.
+	response.sendRedirect("/index.html");
+    }
 
 
     //-------------------------------------------------JSON CONVERTERS-------------------------------
@@ -86,7 +87,7 @@ public class DataServlet extends HttpServlet {
      * Converts a ServerStats instance into a JSON string using the Gson library. Note: We first added
      * the Gson library dependency to pom.xml.
      */
-    private String convertToJson(Comment[] list) {
+    private String convertToJson(List<Comment> list) {
 	Gson gson = new Gson();
 	String json = gson.toJson(list);
 	return json;

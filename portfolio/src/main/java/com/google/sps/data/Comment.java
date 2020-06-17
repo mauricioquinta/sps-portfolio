@@ -18,6 +18,12 @@ public final class Comment {
 	user = u;
     }
 
+    public Comment(String m, String f, String l){
+	messege = m;
+	String lwSpcace = " ".concat(l);
+	user = f.concat(lwSpcace);
+    }
+
     public String getMessege(){
 	return messege;
     }
