@@ -14,8 +14,15 @@
 
 package com.google.sps.servlets;
 
+
 import java.util.*;
 import com.google.sps.data.Comment;
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Query.SortDirection;
 import com.google.gson.Gson;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
@@ -29,16 +36,38 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-
+/**--------------------------------------------allows for comment implememntation----------------------------*/
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
 
-    List<Comment> cList = new ArrayList<Comment>();
     
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
 
+	//use query to access data in datastore 
+	Query query = new Query("Comment");
+	DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+	PreparedQuery results = datastore.prepare(query);
+
+	//list of comments to be converted to JSON object 
+	List<Comment> cList = new ArrayList<>();
+
+	//parse entitys in datastore ie comments 
+	for (Entity entity : results.asIterable()) {
+
+	    //retrive information from dtastore 
+	    long id = entity.getKey().getId();
+	    String user = (String) entity.getProperty("user");
+	    String comment = (String) entity.getProperty("comment");
+
+	    //create comment element and append to list
+	    Comment nc = new Comment(comment, user);
+	    cList.add(nc);
+	
+	}
+
+	//convert to JSON and send to function call
 	String json = convertToJson(cList);
 	response.setContentType("application/json;");
 	response.getWriter().println(json);
@@ -56,9 +85,17 @@ public class DataServlet extends HttpServlet {
 	String lName = request.getParameter("lName");
 	String comment = request.getParameter("comment");
 
-	//create comment from content and add it to list 
-	Comment nc = new Comment(comment, fName, lName); 
-	cList.add(nc);
+	//create comment from content
+	Comment nc = new Comment(comment, fName, lName);
+
+	//create entity equivalent to comment object 
+	Entity commentEnt = new Entity("Comment");
+	commentEnt.setProperty("user", nc.getUser());
+	commentEnt.setProperty("comment", nc.getMessage());
+
+	//adding to database
+	DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+	datastore.put(commentEnt);
 	    
 	// Redirect back to the HTML page.
 	response.sendRedirect("/index.html");
@@ -75,15 +112,13 @@ public class DataServlet extends HttpServlet {
 	json += "\"" + c.getUser() + "\"";
 	json += ", ";
 	json += "\"messege\": ";
-	json += "\"" + c.getMessege();
+	json += "\"" + c.getMessage();
 	json += "}";
 	return json;
     }
 
 
-  
-
-    /**
+      /**
      * Converts a ServerStats instance into a JSON string using the Gson library. Note: We first added
      * the Gson library dependency to pom.xml.
      */

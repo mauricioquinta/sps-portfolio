@@ -16,48 +16,48 @@
  * Adds a random quote to the page.
  */
 function randomQuote() {
-    const greetings =[ 'Be yourself; everyone else is already taken   - Oscar Wilde',
+    //list of quotes 
+    const quotes =[ 'Be yourself; everyone else is already taken   - Oscar Wilde',
 		       'Very little is needed to make a happy life;  it is all within yourself, in your way of thinking.  - Marcus Aurelius',
 		       'I know this defies the law of gravity, but I never studied law!  - Bugs Bunny',
 		       "I don't know where I'm going from here, but I promise it won't be boring.  - David Bowie"
 		     ];
 
     // Pick a random quote.
-    const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+    const quote = greetings[Math.floor(Math.random() * greetings.length)];
 
     // Add it to the page.
     const quoteCont = document.getElementById('quote-container');
-    quoteCont.innerText = greeting;
+    quoteCont.innerText = quote;
 }
 
 
 
 /**
- * Fetches data from the servers and adds them to the DOM.
+ * Fetches comment data from the servers and adds them to the DOM.
  */
 function getData() {
+
     
     fetch('/data').then(response => response.json()).then((data) => {
-	
-	// data is a JSON object, an array of Comments
-	
-	const statsListElement = document.getElementById('cList');
-	statsListElement.innerHTML = '';
+	//get the element and clear previous information
+	const commentListElement = document.getElementById('cList');
+	commentListElement.innerHTML = '';
 
-	//gets the length of the data object array 
-	var count = Object.keys(data).length;
-	console.log(count);
-	
-
-	//appends every single comment 
-	for( var i = 0 ; i < count ; i++){
-	    statsListElement.appendChild(
-		createListElement( data[i].user + "-----" + data[i].messege));
-
-	}
-    });						       
+	//parse list of comments and append to DOM 
+	data.forEach((comment) => {
+	    commentListElement.appendChild(createListElement(
+		comment.user + "-----" + comment.message));
+	})
+    });
+    
+    				       
 }
 
+
+
+
+/**------------------------------------------------create element fucntions------------------------------- */
 
 
 /** Creates an <li> element containing text. */
