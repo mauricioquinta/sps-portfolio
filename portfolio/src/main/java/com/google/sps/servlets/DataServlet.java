@@ -36,7 +36,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-/**--------------------------------------------allows for comment implememntation----------------------------*/
+/**--------------------------------------------allows for comment implementation----------------------------*/
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
