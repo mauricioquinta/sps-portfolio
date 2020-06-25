@@ -16,7 +16,7 @@
  * Adds a random quote to the page.
  */
 function randomQuote() {
-    //list of quotes 
+    // List of quotes 
     const quotes =[ 'Be yourself; everyone else is already taken   - Oscar Wilde',
 		       'Very little is needed to make a happy life;  it is all within yourself, in your way of thinking.  - Marcus Aurelius',
 		       'I know this defies the law of gravity, but I never studied law!  - Bugs Bunny',
@@ -33,6 +33,45 @@ function randomQuote() {
 
 
 
+var map;
+function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+	center: { lat: 0 , lng: 0 },
+	zoom: 2
+    });
+
+    myLatLng1 = {lat: -45.87, lng: 170.50};
+    var marker = new google.maps.Marker({
+	position: myLatLng1,
+	map: map,
+	title: 'Dunedin!'
+    });
+
+    myLatLng2 = {lat: 5.6, lng: -0.185};
+    var marker = new google.maps.Marker({
+	position: myLatLng2,
+	map: map,
+	title: 'Accra!'
+    });
+
+    myLatLng3 = {lat: 40.80, lng: -73.96};
+    var marker = new google.maps.Marker({
+	position: myLatLng3,
+	map: map,
+	title: 'New York!'
+    });
+
+    myLatLng4 = {lat: 38.63, lng: -77.36};
+    var marker = new google.maps.Marker({
+	position: myLatLng4,
+	map: map,
+	title: 'Virginia!'
+    });
+    
+}
+
+
+
 /**
  * Fetches comment data from the servers and adds them to the DOM.
  */
@@ -40,24 +79,22 @@ function getData() {
 
     
     fetch('/data').then(response => response.json()).then((data) => {
-	//get the element and clear previous information
+	// Get the element and clear previous information
 	const commentListElement = document.getElementById('cList');
 	commentListElement.innerHTML = '';
 
-	//parse list of comments and append to DOM 
+	// Parse list of comments and append to DOM 
 	data.forEach((comment) => {
 	    commentListElement.appendChild(createListElement(
 		comment.user + "-----" + comment.message));
 	})
     });
-    
-    				       
 }
 
 
 
 
-/**------------------------------------------------create element fucntions------------------------------- */
+/**------------------------------------------------Create element functions------------------------------- */
 
 
 /** Creates an <li> element containing text. */
@@ -66,14 +103,14 @@ function createListElement(text) {
     liElement.innerText = text;
     return liElement;
 }
-/** creates a <h3> element */
+/** Creates a <h3> element */
 function createHeaderElement(text){
     const h3Element = document.createElement('h3');
     h3Element.innerText = text;
     return h3Element;
 }
 
-/** creates a <div> element */
+/** Creates a <div> element */
 function createDivElement(elem1, elem2){
     const divElem = document.createElement('div');
     divElem.innerHTML = '';

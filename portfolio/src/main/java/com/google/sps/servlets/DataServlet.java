@@ -31,7 +31,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
-//the link inside webservelet determines the URL that loads what data
+// The link inside webservelet determines the URL that loads what data
 
 
 
@@ -45,29 +45,29 @@ public class DataServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
 
-	//use query to access data in datastore 
+	// Use query to access data in datastore 
 	Query query = new Query("Comment");
 	DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 	PreparedQuery results = datastore.prepare(query);
 
-	//list of comments to be converted to JSON object 
+	// List of comments to be converted to JSON object 
 	List<Comment> cList = new ArrayList<>();
 
-	//parse entitys in datastore ie comments 
+	// Parse entitys in datastore ie comments 
 	for (Entity entity : results.asIterable()) {
 
-	    //retrive information from dtastore 
+	    // Retrive information from dtastore 
 	    long id = entity.getKey().getId();
 	    String user = (String) entity.getProperty("user");
 	    String comment = (String) entity.getProperty("comment");
 
-	    //create comment element and append to list
+	    // Create comment element and append to list
 	    Comment nc = new Comment(comment, user);
 	    cList.add(nc);
 	
 	}
 
-	//convert to JSON and send to function call
+	// Convert to JSON and send to function call
 	String json = convertToJson(cList);
 	response.setContentType("application/json;");
 	response.getWriter().println(json);
@@ -85,15 +85,15 @@ public class DataServlet extends HttpServlet {
 	String lName = request.getParameter("lName");
 	String comment = request.getParameter("comment");
 
-	//create comment from content
+	// Create comment from content
 	Comment nc = new Comment(comment, fName, lName);
 
-	//create entity equivalent to comment object 
+	// Create entity equivalent to comment object 
 	Entity commentEnt = new Entity("Comment");
 	commentEnt.setProperty("user", nc.getUser());
 	commentEnt.setProperty("comment", nc.getMessage());
 
-	//adding to database
+	// Adding to database
 	DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 	datastore.put(commentEnt);
 	    

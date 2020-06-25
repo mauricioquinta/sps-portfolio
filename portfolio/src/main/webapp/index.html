@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
+
+  <!-- ----------------Head element ---------- -->
   <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEGcf34IJtWV3xMnMBOPMjQNKh5Lt8Rr0&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
     <script src="script.js"></script>
   </head>
-  <!--  <body onload="getNameUsingArrowFunction()"> --> 
 
+  <!--------------------- Body ----------------- -->
+  <body>
+    
     <div class="header">
       <a id="mainHeader"  href="#default" class="logo"> Mauricio's Portfolio</a>
 	<div class="header-right">
@@ -20,7 +29,7 @@
     
     <div id="content">
 
-
+      <!-- Contains the about me section seperate from rest of html -->
       <div id="aboutMe">
 	  <h3 class ="iHead">About Me: a short history</h3>
 	  <p class= "iBox">
@@ -36,7 +45,7 @@
 	  </p>
       </div>
 
-      
+      <!-- 1st container holds: infoBox w/image + extra info sections -->
       <div id="infoContainer"> <!-- this is where the first container starts  -->
 
 
@@ -57,7 +66,7 @@
 	</div>
       
 	
-
+	<!-- Contains extended info: 3 boxes -->
 	<div id="extendedInfo">
 
 	  <div id="iBox1">
@@ -102,13 +111,13 @@
 	    </p>
 	  </div>
 
-	  
-	</div><!-- extended info -->
-      </div> <!-- end of first container  -->
+	</div><!-- End extended info -->
+      </div> <!-- End of first container  -->
 
 
       
 
+      <!-- Second container: pictures, comments, map -->
       <div id="infoContainer2">
 
 	<div id = "picRow">
@@ -130,7 +139,7 @@
 	</div>
 
 
-	
+	<!-- Overall container for comments form + old comments -->
 	<div id = "comments">
 	  
 	  <form action="/data" method="POST">
@@ -155,7 +164,7 @@
             </div>
 	  </form>
 
-
+	  <!-- Contains the button displaying previous comments -->
 	  <div id="showC">
 	    <h3 class = "cHead">User Comments</h3>
 	    <p>Click here to see comments:</p>
@@ -163,11 +172,15 @@
 	    <ul id="cList"></ul>
 	  </div>
 	  
-	</div>
-	
-      
-       </div><!-- this is the end of second container -->
+	</div> <!-- End comments -->
 
-    </div> <!-- content -->
+      </div><!-- End of second container -->
+
+      <!-- This is a map -->
+      <div id ="map"></div>
+      
+    </div> <!-- End content -->
+
+    
   </body>
 </html>
