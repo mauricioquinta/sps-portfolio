@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
+
+  <!-- ----------------Head element ---------- -->
   <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEGcf34IJtWV3xMnMBOPMjQNKh5Lt8Rr0&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
     <script src="script.js"></script>
   </head>
-  <body>
 
+  <!--------------------- Body ----------------- -->
+  <body>
+    
     <div class="header">
-      <a href="#default" class="logo">Mau's Portfolio</a>
+      <a id="mainHeader"  href="#default" class="logo"> Mauricio's Portfolio</a>
 	<div class="header-right">
 	  <a class="active" href="#home">Home</a>
 	  <a href="#contact">Contact</a>
@@ -20,7 +29,7 @@
     
     <div id="content">
 
-
+      <!-- Contains the about me section seperate from rest of html -->
       <div id="aboutMe">
 	  <h3 class ="iHead">About Me: a short history</h3>
 	  <p class= "iBox">
@@ -36,7 +45,7 @@
 	  </p>
       </div>
 
-      
+      <!-- 1st container holds: infoBox w/image + extra info sections -->
       <div id="infoContainer"> <!-- this is where the first container starts  -->
 
 
@@ -54,11 +63,10 @@
 	    <button onclick=randomQuote()>Quote Me!</button>
 	    <div id="quote-container"></div>
 	  </div>
-	  
 	</div>
       
 	
-
+	<!-- Contains extended info: 3 boxes -->
 	<div id="extendedInfo">
 
 	  <div id="iBox1">
@@ -103,15 +111,13 @@
 	    </p>
 	  </div>
 
-	
-	</div><!-- extended info -->
-     
-    
-	</div> <!-- end of first container  -->
+	</div><!-- End extended info -->
+      </div> <!-- End of first container  -->
 
 
       
 
+      <!-- Second container: pictures, comments, map -->
       <div id="infoContainer2">
 
 	<div id = "picRow">
@@ -131,9 +137,50 @@
 	    
 	  </div>
 	</div>
-      
-       </div><!-- this is the end of second container -->
 
-    </div> <!-- content -->
+
+	<!-- Overall container for comments form + old comments -->
+	<div id = "comments">
+	  
+	  <form action="/data" method="POST">
+            <label class = "fFont">Name: </label>
+	    
+            <div class="row">
+              <div class="col">
+		<input type="text" name="fName" class="form-control" placeholder="First name">
+              </div>
+              <div class="col">
+		<input type="text" name="lName" class="form-control" placeholder="Last name">
+              </div>
+            </div>
+	    
+            <div class="form-group">
+              <label class="fFont"> Message: </label>
+              <textarea name="comment" class="form-control" rows="3" placeholder="Enter your message here"></textarea>
+            </div>
+	    
+            <div class="fFont">
+              <button type="submit" class="btn">Send</button>
+            </div>
+	  </form>
+
+	  <!-- Contains the button displaying previous comments -->
+	  <div id="showC">
+	    <h3 class = "cHead">User Comments</h3>
+	    <p>Click here to see comments:</p>
+	    <button onclick="getData()">GetComments!</button>
+	    <ul id="cList"></ul>
+	  </div>
+	  
+	</div> <!-- End comments -->
+
+      </div><!-- End of second container -->
+
+      <!-- This is a map -->
+      <div id ="map"></div>
+      
+    </div> <!-- End content -->
+
+    
   </body>
 </html>
